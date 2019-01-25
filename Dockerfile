@@ -1,6 +1,6 @@
 FROM coreoasis/builtin_keys_server:latest
 
-EXPOSE 8080
+EXPOSE 8080 8081
 
 COPY /src/keys_server/PiWind/KeysServer.ini /var/www/oasis/oasis_keys_server/ 
 COPY ["./keys_data/PiWind/", \
@@ -8,6 +8,10 @@ COPY ["./keys_data/PiWind/", \
 COPY startup.sh  /usr/local/bin/
 
 USER root
+
+COPY ports.conf /etc/apache2
+COPY oasis.conf /etc/apache2/sites-available
+COPY 000-default.conf /etc/apache2/sites-available
 
 RUN chmod +x /usr/local/bin/startup.sh
 
