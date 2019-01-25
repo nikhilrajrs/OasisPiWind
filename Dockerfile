@@ -21,7 +21,9 @@ RUN mkdir -p /var/log/oasis && \
 RUN chgrp -R 0 /var/oasis/keys_data && \
     chmod -R g=u /var/oasis/keys_data && \
     chgrp -R 0 /var/log/oasis && \
-    chmod -R g=u /var/log/oasis
+    chmod -R g=u /var/log/oasis && \
+    chgrp -R 0 /var/log/apache2 && \
+    chmod -R g=u /var/log/apache2
 
 USER 10001
 
