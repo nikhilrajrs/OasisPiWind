@@ -5,7 +5,7 @@ EXPOSE 8080
 COPY /src/keys_server/PiWind/KeysServer.ini /var/www/oasis/oasis_keys_server/ 
 COPY ["./keys_data/PiWind/", \
       "/var/oasis/keys_data/"]
-COPY /startup.sh  /usr/local/bin/
+COPY startup.sh  /usr/local/bin/
 
 USER root
 
