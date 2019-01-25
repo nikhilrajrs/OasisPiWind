@@ -1,4 +1,2 @@
 #!/bin/bash
-#apache2ctl start
-
-sleep 300
+apache2ctl start
