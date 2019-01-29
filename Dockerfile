@@ -23,7 +23,9 @@ RUN chgrp -R 0 /var/oasis/keys_data && \
     chgrp -R 0 /var/log/oasis && \
     chmod -R g=u /var/log/oasis && \
     chgrp -R 0 /var/log/apache2 && \
-    chmod -R g=u /var/log/apache2
+    chmod -R g=u /var/log/apache2 && \
+    chgrp -R 0 /var/run/apache2 && \
+    chmod -R g=u /var/run/apache2
 
 USER 10001
 
